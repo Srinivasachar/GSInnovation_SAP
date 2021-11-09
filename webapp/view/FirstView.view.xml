@@ -1,0 +1,21 @@
+<mvc:View controllerName="gs.com.GSInnovation.controller.FirstView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:ce="sap.ui.codeeditor">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<IconTabHeader id="iconTabHeader" selectedKey="invalidKey" select=".onSelectTab">
+							<items>
+								<IconTabFilter text="I_TAXITEM" key="I_TAXITEM"/>
+								<IconTabFilter text="P_BSET" key="P_BSET"/>
+								<IconTabFilter text="BSET" key="BSET"/>
+							</items>
+						</IconTabHeader>
+						<ce:CodeEditor id="aCodeEditor" type="javascript" syntaxHints="false" value="{CodeEditorModel>/Code}"/>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
