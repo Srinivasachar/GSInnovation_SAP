@@ -66,5 +66,77 @@
                 "Key": "BOX"
             }
         ]
+    },
+    {
+        "Header": "6.Audit trail should be enabled for all reports by default?",
+        "Completed": false,
+        "Expanded": false,
+        "Childrens": [
+            {
+                "Name":"Full Submission",
+                "Key": "LINE"
+            },
+            {
+                "Name":"Delta Submission",
+                "Key": "BOX"
+            }
+        ]
+    },
+    {
+        "Header": "7. What kind of file output type?",
+        "Completed": false,
+        "Expanded": false,
+        "Childrens": [
+            {
+                "Name":"PDF",
+                "Key": "LINE"
+            },
+            {
+                "Name":"XML",
+                "Key": "BOX"
+            },
+            {
+                "Name":"JSON",
+                "Key": "BOX"
+            },
+            {
+                "Name":"ALV",
+                "Key": "BOX"
+            }
+        ]
+    },
+    {
+        "Header": "8. Phase Type?",
+        "Completed": false,
+        "Expanded": false,
+        "Childrens": [
+            {
+                "Name":"Declaration",
+                "Key": "LINE"
+            },
+            {
+                "Name":"Correction",
+                "Key": "BOX"
+            },
+            {
+                "Name":"Clarification",
+                "Key": "BOX"
+            }
+        ]
+    },
+    {
+        "Header": "9. Activity Needed?",
+        "Completed": false,
+        "Expanded": false,
+        "Childrens": [
+            {
+                "Name":"Pre Activities",
+                "Key": "LINE"
+            },
+            {
+                "Name":"Post Activities",
+                "Key": "BOX"
+            }
+        ]
     }
 ]
