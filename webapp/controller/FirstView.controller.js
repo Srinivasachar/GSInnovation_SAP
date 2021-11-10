@@ -1,7 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/ui/model/json/JSONModel"
-], function (Controller, JSONModel) {
+	"sap/ui/model/json/JSONModel",
+	"sap/ui/core/BusyIndicator"
+], function (Controller, JSONModel, BusyIndicator) {
 	"use strict";
 
 	return Controller.extend("gs.com.GSInnovation.controller.FirstView", {
@@ -18,7 +19,6 @@ sap.ui.define([
 				"Code": ""
 			});
 			this.getView().setModel(oEditorModel, "CodeEditorModel");
-			this.readCodeFromAPI("I_TAXITEM");
 		},
 
 		readCodeFromAPI: function (sFile) {
@@ -35,15 +35,18 @@ sap.ui.define([
 
 		cancelFileUploadCreation: function () {
 			this.FileUpload.then(function (oDialog) {
+				this.readCodeFromAPI("I_TAXITEM");
 				oDialog.close();
-			});
+			}.bind(this));
 		},
 
 		onSelectTab: function (oEvent) {
 			var sFilterId = oEvent.getParameter("selectedKey");
+			BusyIndicator.show(0);
 			this.readCodeFromAPI(sFilterId);
-			this.getView().getModel("CodeEditorModel").checkUpdate(true);
+			setTimeout(function(){
+				BusyIndicator.hide();
+			}.bind(this), 1500);
 		},
-
 	});
 });

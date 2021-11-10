@@ -1,21 +1,47 @@
-<mvc:View controllerName="gs.com.GSInnovation.controller.FirstView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
-	xmlns:ce="sap.ui.codeeditor">
-	<Shell id="shell">
-		<App id="app">
-			<pages>
-				<Page id="page" title="{i18n>title}">
-					<content>
-						<IconTabHeader id="iconTabHeader" selectedKey="invalidKey" select=".onSelectTab">
-							<items>
-								<IconTabFilter text="I_TAXITEM" key="I_TAXITEM"/>
-								<IconTabFilter text="P_BSET" key="P_BSET"/>
-								<IconTabFilter text="BSET" key="BSET"/>
-							</items>
-						</IconTabHeader>
-						<ce:CodeEditor id="aCodeEditor" type="javascript" syntaxHints="false" value="{CodeEditorModel>/Code}"/>
-					</content>
-				</Page>
-			</pages>
-		</App>
-	</Shell>
-</mvc:View>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified">
+	<Dialog id="UploadFragment" afterClose="cancelFileUploadCreation" contentWidth="55%" title="Upload XML" resizable="true" draggable="true" class="sapUiSizeCompact">
+		<content>
+			<f:SimpleForm id="AddCondSimpleForm" editable="true" visible="true" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024"
+				labelSpanL="3" labelSpanM="3" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
+				<f:content>
+					<Label id="conditionDialogLabel" tooltip="{i18n>conditionDialogId}" required="true" text="Upload File"
+						labelFor="condIdFragment"/>
+					<l:HorizontalLayout>
+							<u:FileUploader
+								id="fileUploader"
+								name="myFileUpload"
+								uploadUrl="upload/"
+								tooltip="Upload your file to the local server"
+								uploadComplete="handleUploadComplete"/>
+							<Button
+								text="Upload File"
+								type="Emphasized"
+								press="handleUploadPress"/>
+					</l:HorizontalLayout>
+					<Label id="conditionDescriptionLabel" tooltip="{i18n>Description}" text="Execution Mode" required="true"
+						labelFor="conditionDescriptionInput"/>
+                    <RadioButtonGroup id="rbg3" columns="1" class="sapUiMediumMarginBottom">
+						<RadioButton id="RB3-1" text="Production Mode" />
+						<RadioButton id="RB3-2" text="Test Mode" />
+					</RadioButtonGroup>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<!--</Page>-->
+		<beginButton>
+			<Button id="saveCondId" press="cancelFileUploadCreation" text="Proceed" type="Emphasized">
+				<layoutData>
+					<FlexItemData id="saveCondFlexItemData" growFactor="1"/>
+				</layoutData>
+			</Button>
+		</beginButton>
+		<endButton>
+			<Button id="cancelCondId" press="cancelFileUploadCreation" text="Cancel">
+				<layoutData>
+					<FlexItemData id="cancelCondFlexItemData" growFactor="1"/>
+				</layoutData>
+			</Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
