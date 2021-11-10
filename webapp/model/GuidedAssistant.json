@@ -1,0 +1,70 @@
+[
+    {
+        "Header": "1. For Which Country you want to create the Rep.Def?",
+        "Completed": false,
+        "Expanded": true,
+        "Childrens": [
+            {
+                "Name":"Australia",
+                "Key": "AU"
+            },
+            {
+                "Name":"South Africa",
+                "Key": "ZA"
+            },
+            {
+                "Name": "Germany",
+                "Key": "DE"
+            }
+        ]
+    },
+    {
+        "Header": "2. Which Report functionality you want to enablement?",
+        "Completed": false,
+        "Expanded": false,
+        "Childrens": [
+            {
+                "Name":"Value Added Tax",
+                "Key": "VAT"
+            },
+            {
+                "Name":"Witholding",
+                "Key": "WHT"
+            },
+            {
+                "Name": "GST",
+                "Key": "GST"
+            }
+        ]
+    },
+    {
+        "Header": "3. Would the report be a line item report or a box level report?",
+        "Completed": false,
+        "Expanded": false,
+        "Childrens": [
+            {
+                "Name":"Line Item",
+                "Key": "LINE"
+            },
+            {
+                "Name":"Box Level",
+                "Key": "BOX"
+            }
+        ]
+    },
+    {
+        "Header": "4. Would the report have the following functionality ?",
+        "Completed": false,
+        "Expanded": false,
+        "Childrens": [
+            {
+                "Name":"TDT",
+                "Key": "LINE"
+            },
+            {
+                "Name":"RITA",
+                "Key": "BOX"
+            }
+        ]
+    }
+]

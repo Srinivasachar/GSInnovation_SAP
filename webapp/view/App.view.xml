@@ -1,0 +1,9 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="gs.com.GSInnovation.controller.App"
+	displayBlock="true"
+	xmlns="sap.m">
+
+	<App id="app"
+		 busyIndicatorDelay="{appView>/delay}" defaultTransitionName="show" />
+</mvc:View>

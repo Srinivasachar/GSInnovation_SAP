@@ -1,8 +1,8 @@
 <mvc:View controllerName="gs.com.GSInnovation.controller.FirstView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
 	xmlns:ce="sap.ui.codeeditor">
-	<Shell id="shell">
+	<!-- <Shell id="shell">
 		<App id="app">
-			<pages>
+			<pages> -->
 				<Page id="page" title="{i18n>title}">
 					<content>
 						<IconTabHeader id="iconTabHeader" selectedKey="I_TAXITEM" select=".onSelectTab">
@@ -15,15 +15,14 @@
 						<ce:CodeEditor id="aCodeEditor" type="javascript" syntaxHints="false" value="{CodeEditorModel>/Code}"/>
 					</content>
 					<footer>
-			<OverflowToolbar id="OverflowToolbar">
-				
+			<OverflowToolbar id="OverflowToolbar">	
 				<ToolbarSpacer id="ToolbarSpacer3"/>
 				<Button press="onActivateConfigParamPress" text="Submit Changes" type="Emphasized"/>
 				<Button press="onCancelConfigParamPress" text="Discard"/>
 			</OverflowToolbar>
 		</footer>
 				</Page>
-			</pages>
+			<!-- </pages>
 		</App>
-	</Shell>
+	</Shell> -->
 </mvc:View>

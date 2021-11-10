@@ -1,11 +1,11 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
+	"gs/com/GSInnovation/controller/BaseController",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/BusyIndicator"
-], function (Controller, JSONModel, BusyIndicator) {
+], function (BaseController, JSONModel, BusyIndicator) {
 	"use strict";
 
-	return Controller.extend("gs.com.GSInnovation.controller.FirstView", {
+	return BaseController.extend("gs.com.GSInnovation.controller.FirstView", {
 		onInit: function () {
 			if (!this.FileUpload) {
 				this.FileUpload = this.loadFragment({

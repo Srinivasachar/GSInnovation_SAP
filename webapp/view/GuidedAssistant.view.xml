@@ -1,0 +1,56 @@
+<mvc:View controllerName="gs.com.GSInnovation.controller.GuidedAssistant" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:ce="sap.ui.codeeditor" 
+>
+        <Page id="idGuidedAssistant" title="{i18n>title}" class="sapUiSizeCompact">
+        <content>
+        <!-- <ObjectHeader
+				responsive="true"
+				title="Testing">
+				<headerContainer>
+					<HeaderContainer
+						scrollStep="200"
+						scrollTime="500"
+						showDividers="true"
+						class="sapUiSmallMargin">
+						<FlexBox
+							width="12rem"
+							height="10rem"
+							alignItems="Center"
+							justifyContent="Center"
+							direction="Column">
+							<Title
+								text="{i18n>processFlowChartsShareOwnProduction}"
+								class="sapUiSmallMargin"/>
+							<FlexBox width="6rem" height="6rem">
+								<mc:RadialMicroChart percentage="10"/>
+							</FlexBox>
+						</FlexBox>
+					</HeaderContainer>
+				</headerContainer>
+			</ObjectHeader> -->
+            <VBox items="{Suggesstion>/}">
+                <Panel expandable="true" expand="onExpand" expanded="{Suggesstion>Expanded}">
+                    <headerToolbar>
+                        <OverflowToolbar active="true" press="onOverflowToolbarPress">
+                            <Title text="{Suggesstion>Header}" />
+                            <ToolbarSpacer />
+                            <Button text="Reset"/>
+                            <Button icon="{= ${Suggesstion>Completed}? 'sap-icon://accept' : ''}" type="{= ${Suggesstion>Completed} ? 'Success' : 'Default' }"/>
+                        </OverflowToolbar>
+		            </headerToolbar>
+                    <content>
+			            <OverflowToolbar content="{Suggesstion>Childrens}">
+                            <ToggleButton text="{Suggesstion>Name}"/>
+                        </OverflowToolbar>
+		            </content>
+                </Panel>
+            </VBox>
+         </content>
+        <footer>
+            <OverflowToolbar id="OverflowToolbar">	
+                <ToolbarSpacer id="ToolbarSpacer3"/>
+                <Button press="onActivateConfigParamPress" text="Proceed Creation" type="Emphasized"/>
+                <Button press="onCancelConfigParamPress" text="Discard"/>
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

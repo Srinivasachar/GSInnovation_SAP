@@ -37,10 +37,10 @@
 	"sap.ui5": {
 		"flexEnabled": false,
 		"rootView": {
-			"viewName": "gs.com.GSInnovation.view.FirstView",
+			"viewName": "gs.com.GSInnovation.view.App",
 			"type": "XML",
 			"async": true,
-			"id": "FirstView"
+			"id": "App"
 		},
 		"dependencies": {
 			"minUI5Version": "1.65.6",
@@ -78,17 +78,39 @@
 				"clearControlAggregation": false
 			},
 			"routes": [{
-				"name": "RouteFirstView",
-				"pattern": "RouteFirstView",
-				"target": ["TargetFirstView"]
+				"name": "Overview",
+				"pattern": "",
+				"target": ["Overview"]
+			},{
+				"name": "FirstView",
+				"pattern": "FirstView",
+				"target": ["FirstView"]
+			},{
+				"name": "GuidedAssistant",
+				"pattern": "GuidedAssistant",
+				"target": ["GuidedAssistant"]
 			}],
 			"targets": {
-				"TargetFirstView": {
+				"Overview": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "Overview",
+					"viewName": "Overview"
+				},
+				"FirstView": {
 					"viewType": "XML",
 					"transition": "slide",
 					"clearControlAggregation": false,
 					"viewId": "FirstView",
 					"viewName": "FirstView"
+				},
+				"GuidedAssistant": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "GuidedAssistant",
+					"viewName": "GuidedAssistant"
 				}
 			}
 		}
