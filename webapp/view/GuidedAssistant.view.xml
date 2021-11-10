@@ -1,8 +1,8 @@
 <mvc:View controllerName="gs.com.GSInnovation.controller.GuidedAssistant" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:ce="sap.ui.codeeditor" 
->
-        <Page id="idGuidedAssistant" title="{i18n>title}" class="sapUiSizeCompact">
+xmlns:mc="sap.suite.ui.microchart" xmlns:common="sap.suite.ui.commons">
+        <Page id="idGuidedAssistant" title="ACR Guided Assistant" class="sapUiSizeCompact">
         <content>
-        <!-- <ObjectHeader
+        <ObjectHeader
 				responsive="true"
 				title="Testing">
 				<headerContainer>
@@ -18,7 +18,7 @@
 							justifyContent="Center"
 							direction="Column">
 							<Title
-								text="{i18n>processFlowChartsShareOwnProduction}"
+								text="Completion Percentage"
 								class="sapUiSmallMargin"/>
 							<FlexBox width="6rem" height="6rem">
 								<mc:RadialMicroChart percentage="10"/>
@@ -26,7 +26,37 @@
 						</FlexBox>
 					</HeaderContainer>
 				</headerContainer>
-			</ObjectHeader> -->
+			</ObjectHeader>
+            <Panel headerText="{i18n>processFlowProcessTitle}">
+            <common:ProcessFlow
+                id="processflow1"
+                scrollable="false"
+                nodes="{process>/Nodes}"
+                lanes="{process>/Lanes}"
+                nodePress=".onNodePressed">
+                <common:nodes>
+                    <common:ProcessFlowNode
+                        laneId="{process>lane}"
+                        nodeId="{process>id}"
+                        title="{process>title}"
+                        titleAbbreviation="{process>titleAbbreviation}"
+                        isTitleClickable="{process>isTitleClickable}"
+                        children="{process>children}"
+                        state="{process>state}"
+                        stateText="{process>stateText}"
+                        texts="{process>texts}"
+                        highlighted="{process>highlighted}"
+                        focused="{process>focused}" />
+                </common:nodes>
+                <common:lanes>
+                    <common:ProcessFlowLaneHeader
+                        laneId="{process>id}"
+                        iconSrc="{process>icon}"
+                        text="{process>label}"
+                        position="{process>position}" />
+                </common:lanes>
+            </common:ProcessFlow>
+        </Panel>
             <VBox items="{Suggesstion>/}">
                 <Panel expandable="true" expand="onExpand" expanded="{Suggesstion>Expanded}">
                     <headerToolbar>

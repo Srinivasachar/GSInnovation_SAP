@@ -60,6 +60,10 @@
 				"settings": {
 					"bundleName": "gs.com.GSInnovation.i18n.i18n"
 				}
+			},
+			"process": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/data/ProcessFlowData.json"
 			}
 		},
 		"resources": {
