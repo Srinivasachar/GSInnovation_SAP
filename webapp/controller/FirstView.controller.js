@@ -15,10 +15,9 @@ sap.ui.define([
 			this.FileUpload.then(function (oDialog) {
 				oDialog.open();
 			});
-			var oEditorModel = new JSONModel({
+			this.getView().setModel(new JSONModel({
 				"Code": ""
-			});
-			this.getView().setModel(oEditorModel, "CodeEditorModel");
+			}), "CodeEditorModel");
 		},
 
 		readCodeFromAPI: function (sFile) {
@@ -46,7 +45,7 @@ sap.ui.define([
 			this.readCodeFromAPI(sFilterId);
 			setTimeout(function(){
 				BusyIndicator.hide();
-			}.bind(this), 1500);
+			}.bind(this), 700);
 		},
 	});
 });
