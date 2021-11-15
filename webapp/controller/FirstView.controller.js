@@ -47,5 +47,16 @@ sap.ui.define([
 				BusyIndicator.hide();
 			}.bind(this), 700);
 		},
+
+		onActivateConfigParamPress: function(){
+			if (!this.Transport) {
+				this.Transport = this.loadFragment({
+					name: "gs.com.GSInnovation.Fragment.Transport"
+				});
+			}
+			this.Transport.then(function (oDialog) {
+				oDialog.open();
+			});
+		}
 	});
 });

@@ -3,7 +3,7 @@
 	<Dialog id="UploadFragment" afterClose="cancelFileUploadCreation" contentWidth="50%" title="Upload XML" resizable="true" draggable="true" class="sapUiSizeCompact">
 		<content>
 			<f:SimpleForm id="AddCondSimpleForm" editable="true" visible="true" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024"
-				labelSpanL="3" labelSpanM="3" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
+				labelSpanL="3" labelSpanM="3" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2" title="Create your artifacts by just uploading XML file ">
 				<f:content>
 					<Label id="conditionDialogLabel" tooltip="{i18n>conditionDialogId}" required="true" text="Upload File"
 						labelFor="condIdFragment"/>
@@ -19,12 +19,12 @@
 								type="Emphasized"
 								press="handleUploadPress"/>
 					</l:HorizontalLayout>
-					<Label id="conditionDescriptionLabel" tooltip="{i18n>Description}" text="Execution Mode" required="true"
+					<!-- <Label id="conditionDescriptionLabel" tooltip="{i18n>Description}" text="Execution Mode" required="true"
 						labelFor="conditionDescriptionInput"/>
                     <RadioButtonGroup id="rbg3" columns="1" class="sapUiMediumMarginBottom">
 						<RadioButton id="RB3-1" text="Production Mode" />
 						<RadioButton id="RB3-2" text="Test Mode" />
-					</RadioButtonGroup>
+					</RadioButtonGroup> -->
 				</f:content>
 			</f:SimpleForm>
 		</content>

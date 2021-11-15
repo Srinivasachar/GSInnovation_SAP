@@ -1,10 +1,9 @@
-<mvc:View controllerName="gs.com.GSInnovation.controller.GuidedAssistant" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:ce="sap.ui.codeeditor" 
-xmlns:mc="sap.suite.ui.microchart" xmlns:common="sap.suite.ui.commons">
-        <Page id="idGuidedAssistant" title="ACR Guided Assistant" class="sapUiSizeCompact">
+<mvc:View controllerName="gs.com.GSInnovation.controller.GuidedAssistant" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:ce="sap.ui.codeeditor" xmlns:mc="sap.suite.ui.microchart" xmlns:core="sap.ui.core">
+        <Page id="idGuidedAssistant" title="ACR Guided Assistant" class="sapUiSizeCompact" showNavButton="true" navButtonPress="onNavBack">
         <content>
         <ObjectHeader
 				responsive="true"
-				title="Testing">
+				title="Overview">
 				<headerContainer>
 					<HeaderContainer
 						scrollStep="200"
@@ -21,56 +20,49 @@ xmlns:mc="sap.suite.ui.microchart" xmlns:common="sap.suite.ui.commons">
 								text="Completion Percentage"
 								class="sapUiSmallMargin"/>
 							<FlexBox width="6rem" height="6rem">
-								<mc:RadialMicroChart percentage="10"/>
+								<mc:RadialMicroChart percentage="{GuideOverview>/Percentage}"/>
 							</FlexBox>
 						</FlexBox>
 					</HeaderContainer>
 				</headerContainer>
 			</ObjectHeader>
-            <Panel headerText="{i18n>processFlowProcessTitle}">
-            <common:ProcessFlow
-                id="processflow1"
-                scrollable="false"
-                nodes="{process>/Nodes}"
-                lanes="{process>/Lanes}"
-                nodePress=".onNodePressed">
-                <common:nodes>
-                    <common:ProcessFlowNode
-                        laneId="{process>lane}"
-                        nodeId="{process>id}"
-                        title="{process>title}"
-                        titleAbbreviation="{process>titleAbbreviation}"
-                        isTitleClickable="{process>isTitleClickable}"
-                        children="{process>children}"
-                        state="{process>state}"
-                        stateText="{process>stateText}"
-                        texts="{process>texts}"
-                        highlighted="{process>highlighted}"
-                        focused="{process>focused}" />
-                </common:nodes>
-                <common:lanes>
-                    <common:ProcessFlowLaneHeader
-                        laneId="{process>id}"
-                        iconSrc="{process>icon}"
-                        text="{process>label}"
-                        position="{process>position}" />
-                </common:lanes>
-            </common:ProcessFlow>
-        </Panel>
             <VBox items="{Suggesstion>/}">
                 <Panel expandable="true" expand="onExpand" expanded="{Suggesstion>Expanded}">
                     <headerToolbar>
                         <OverflowToolbar active="true" press="onOverflowToolbarPress">
                             <Title text="{Suggesstion>Header}" />
                             <ToolbarSpacer />
-                            <Button text="Reset"/>
-                            <Button icon="{= ${Suggesstion>Completed}? 'sap-icon://accept' : ''}" type="{= ${Suggesstion>Completed} ? 'Success' : 'Default' }"/>
+                            <Button text="Completed" visible="{= ${Suggesstion>Completed}}" icon="{= ${Suggesstion>Completed}? 'sap-icon://accept' : ''}" type="{= ${Suggesstion>Completed} ? 'Success' : 'Default' }"/>
+                            <Button text="Reset" visible="{= ${Suggesstion>Completed}}"/>
                         </OverflowToolbar>
 		            </headerToolbar>
                     <content>
-			            <OverflowToolbar content="{Suggesstion>Childrens}">
-                            <ToggleButton text="{Suggesstion>Name}"/>
+			            <OverflowToolbar content="{Suggesstion>Childrens}" >
+                            <!-- <ToggleButton text="{Suggesstion>Name}" press="onSuggesstionClick"/>
+                            <Text text="Suggession 90%"/> -->
+                                <ToggleButton text="{Suggesstion>Name}" press="onSuggesstionClick"/>
                         </OverflowToolbar>
+                        <List mode="MultiSelect" headerText="Custom Content" items="{Suggesstion>Childrens}" >
+                            <!-- <CustomListItem>
+                                <HBox>
+                                    <core:Icon size="2rem" src="sap-icon://attachment-photo" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" />
+                                    <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+                                        <Link text="{Suggesstion>Name}" target="{ProductPicUrl}" press="handlePress"/>
+                                        <Label text="{Suggesstion>Recommendation}"/>
+                                    </VBox>
+                                </HBox>
+                            </CustomListItem> -->
+                            <StandardListItem 
+                            title="{Suggesstion>Name}"
+                            description="{Suggesstion>Recommendation}"
+                            icon="{icon}"
+                            iconInset="false"
+                            highlight="Success"
+                            info="{info}"
+                            infoState="{highlight}"
+                            infoStateInverted="true">
+                            </StandardListItem>
+	                    </List>
 		            </content>
                 </Panel>
             </VBox>
@@ -78,6 +70,7 @@ xmlns:mc="sap.suite.ui.microchart" xmlns:common="sap.suite.ui.commons">
         <footer>
             <OverflowToolbar id="OverflowToolbar">	
                 <ToolbarSpacer id="ToolbarSpacer3"/>
+                <Button press="onSummaryGraph" text="Summary"/>
                 <Button press="onActivateConfigParamPress" text="Proceed Creation" type="Emphasized"/>
                 <Button press="onCancelConfigParamPress" text="Discard"/>
             </OverflowToolbar>

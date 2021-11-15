@@ -1,6 +1,6 @@
 <mvc:View controllerName="gs.com.GSInnovation.controller.Overview" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
 xmlns:layout="sap.ui.layout" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Page id="OverviewPage" title="Intelligent technical Articrafts">
+	<Page id="OverviewPage" title="Intelligent technical Articrafts" showNavButton="true" navButtonPress="onNavBack">
         <content>
            <layout:VerticalLayout class="sapUiResponsiveMargin">
 			<layout:HorizontalLayout allowWrapping="true" content="{TileCollection>/}">

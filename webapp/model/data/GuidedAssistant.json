@@ -6,15 +6,18 @@
         "Childrens": [
             {
                 "Name":"Australia",
-                "Key": "AU"
+                "Key": "AU",
+                "Recommendation": "Recommendation 85%"
             },
             {
                 "Name":"South Africa",
-                "Key": "ZA"
+                "Key": "ZA",
+                "Recommendation": "Recommendation 65%"
             },
             {
                 "Name": "Germany",
-                "Key": "DE"
+                "Key": "DE",
+                "Recommendation": "Recommendation 65%"
             }
         ]
     },
@@ -25,15 +28,18 @@
         "Childrens": [
             {
                 "Name":"Value Added Tax",
-                "Key": "VAT"
+                "Key": "VAT",
+                "Recommendation": "Recommendation 65%"
             },
             {
                 "Name":"Witholding",
-                "Key": "WHT"
+                "Key": "WHT",
+                "Recommendation": "Recommendation 55%"
             },
             {
                 "Name": "GST",
-                "Key": "GST"
+                "Key": "GST",
+                "Recommendation": "Recommendation 55%"
             }
         ]
     },
@@ -44,11 +50,13 @@
         "Childrens": [
             {
                 "Name":"Line Item",
-                "Key": "LINE"
+                "Key": "LINE",
+                "Recommendation": "Recommendation 55%"
             },
             {
                 "Name":"Box Level",
-                "Key": "BOX"
+                "Key": "BOX",
+                "Recommendation": "Recommendation 95%"
             }
         ]
     },
@@ -59,11 +67,13 @@
         "Childrens": [
             {
                 "Name":"TDT",
-                "Key": "LINE"
+                "Key": "LINE",
+                "Recommendation": "Recommendation 95%"
             },
             {
                 "Name":"RITA",
-                "Key": "BOX"
+                "Key": "BOX",
+                "Recommendation": "Recommendation 88%"
             }
         ]
     },
@@ -74,11 +84,13 @@
         "Childrens": [
             {
                 "Name":"Full Submission",
-                "Key": "LINE"
+                "Key": "LINE",
+                "Recommendation": "Recommendation 75%"
             },
             {
                 "Name":"Delta Submission",
-                "Key": "BOX"
+                "Key": "BOX",
+                "Recommendation": "Recommendation 45%"
             }
         ]
     },

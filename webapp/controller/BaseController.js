@@ -4,8 +4,9 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/BusyIndicator",
 	"sap/ui/model/resource/ResourceModel",
-	"sap/ui/core/routing/History"
-], function (Controller, UIComponent, JSONModel, BusyIndicator, ResourceModel, History) {
+	"sap/ui/core/routing/History",
+	"sap/ui/core/Fragment"
+], function (Controller, UIComponent, JSONModel, BusyIndicator, ResourceModel, History, Fragment) {
 	"use strict";
 
 	return Controller.extend("gs.com.GSInnovation.controller.BaseController", {
@@ -57,9 +58,30 @@ sap.ui.define([
 			if (sPreviousHash !== undefined) {
 				window.history.go(-1);
 			} else {
-				this.getRouter().navTo("appHome", {}, true /*no history*/);
+				this.getRouter().navTo("", {}, true /*no history*/);
 			}
-		}
+		},
+		onSummaryGraph: function(){
+            if (!this.SummaryGraphDialog) {
+                Fragment.load({
+                    name: "gs.com.GSInnovation.Fragment.Summary",
+                    controller: this
+                }).then(function (oDialog) {
+                    this.SummaryGraphDialog = oDialog;
+                    this.getView().addDependent(this.SummaryGraphDialog);
+                    this.onDialogOpen();
+                }.bind(this));
+            } else {
+                this.onDialogOpen();
+            }
+        },
+        onDialogOpen : function () {
+            this.SummaryGraphDialog.open();
+        },
+    
+        onDialogClose : function () {
+            this.SummaryGraphDialog.close();
+        },
 	});
 
 });

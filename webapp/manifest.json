@@ -63,7 +63,11 @@
 			},
 			"process": {
 				"type": "sap.ui.model.json.JSONModel",
-				"uri": "model/data/ProcessFlowData.json"
+				"uri": "model/data/CdsTree.json"
+			},
+			"Guided": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/data/QuickRDCreation.json"
 			}
 		},
 		"resources": {
